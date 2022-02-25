@@ -15,8 +15,9 @@ const sendMailService = require('../services/sendMail')
 const controller = {
     async sendMail(request, response, next) {
         debug('dans SendMail');
+        debug('request.body', request.body)
 
-        await sendMailService('mon sujet','des trucs trop bien')
+        await sendMailService(request.body.receverMail,request.body.subject,request.body.message)
 
         return response.send('Hello pat');
         

@@ -4,6 +4,7 @@ const controller = require('./controllers/controller')
 
 const router = Router();
 
-router.get('/sendMail', controller.sendMail);
+router.post('/sendMail', controller.sendMail);
+
 
 module.exports = router;
