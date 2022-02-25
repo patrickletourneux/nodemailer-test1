@@ -1,7 +1,7 @@
 
 const nodemailer = require('nodemailer');
 
-const sendMail = async function ()  {
+const sendMail = async function (sub,mes)  {
     const transporter = nodemailer.createTransport({
         streamTransport: true,
         newline: 'windows'
@@ -10,8 +10,8 @@ const sendMail = async function ()  {
     var message = {
         from: 'patriste92@hotmail.fr',
         to: 'patrick.letourneux20@gmail.com',
-        subject: 'Confirm Email  Nodemailer test',
-        text: 'Please confirm your email',
+        subject: sub,
+        text: mes,
         html: '<p>Please confirm your email</p>'
     };
     
@@ -19,7 +19,8 @@ const sendMail = async function ()  {
         if (error) {
             return console.log(error);
         }
-        console.log('Message sent: %s', info.messageId);
+        console.log('Message sent: %s', message);
+        return ('string for test')
     });
     
 }

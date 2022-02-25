@@ -16,9 +16,10 @@ const controller = {
     async sendMail(request, response, next) {
         debug('dans SendMail');
 
-        await sendMailService()
+        await sendMailService('mon sujet','des trucs trop bien')
 
         return response.send('Hello pat');
+        
 
     },
 };

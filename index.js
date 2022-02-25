@@ -8,6 +8,8 @@ const app = express();
 
 require('./app/helpers/docHelpers')(app);
 
+app.use(express.static('./public'));
+
 app.use(router);
 const port = process.env.PORT || 5000;
 
