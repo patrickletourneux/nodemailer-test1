@@ -16,7 +16,10 @@ const app = {
                     method: 'POST',
                     body: formData
                 });
-                // const envoistatus = await response.json();
+                
+                const reponsejson = await response.json();
+                console.log('response:', response)
+                console.log('reponsejson:', reponsejson)
                 // console.log(envoistatus)
 
             })

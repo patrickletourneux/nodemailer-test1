@@ -15,11 +15,12 @@ const sendMailService = require('../services/sendMail')
 const controller = {
     async sendMail(request, response, next) {
         debug('dans SendMail');
-        debug('request.body', request.body)
+        debug('request.body', request.body);
 
-        await sendMailService(request.body.receverMail,request.body.subject,request.body.message)
-
-        return response.send('Hello pat');
+        const envoi = await sendMailService(request.body.receverMail,request.body.subject,request.body.message);
+        debug('envoi message',envoi)
+        
+        return response.status(200).send(['message send']);
         
 
     },
